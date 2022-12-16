@@ -1,0 +1,67 @@
+<?php
+$title = 'segitiga';
+include 'header.php';
+include 'koneksi.php';
+$db_bangun = mysqli_query($konek, "SELECT * FROM db_bangun WHERE nama_bangun = 'Lingkaran'");
+?>
+    <form class="form-horizontal" method="POST" action="lingkaran.php">
+        <div class="form-group row">
+            <label for="id_bangun_" class="col-sm-2 col-form-label">
+                <div class="container">Bangun <span style="color: red">*</span></div>
+            </label>
+            <div class="col-sm-10">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div>
+                                <select id="id_bangun_" name="id_bangun_" class="selectpicker form-control" data-live-search="true" required>
+                                    <option selected>Pilih Bangun</option>
+                                    <?php foreach ($db_bangun as $key) : ?>
+                                        <option value="<?= $key['id_bangun'] ?>"><?= $key['nama_bangun'];  ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label for="jari" class="col-sm-2 col-form-label">
+                <div class="container">Jari-Jari <span style="color: red">*</span></div>
+            </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="jari" name="jari" placeholder="jari-Jari Lingkaran" required>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">
+                <div class="container" style="color: red">* <span>Wajib</span></div>
+            </label>
+            <div class="col-sm-10">
+                <button type="submit" name="submit" value="hasil" class="btn btn-primary">Hitung</button>
+            </div>
+        </div>
+    </form>
+        <?php
+        if (isset($_POST['submit'])) {
+            if($_POST['submit']){
+            $jari = $_POST['jari']; // membaca bil pertama dari form
+            
+              (float)$hasil = (float)$jari * (float)$jari * 22/7 ;
+              echo "jari-jari: " .$jari; 
+              echo "</br> Luas Lingkaran: ".$hasil;
+            }
+        }
+    ?>
+    </body>
+    
+</div>
+</section>
+</div>
+</body>
+<?php
+include 'footer.php';
+?>

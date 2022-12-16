@@ -35,7 +35,7 @@ function formatTanggal2($date)
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="index.php">
-                    <span class=" align-middle">Data Store</span>
+                    <span class=" align-middle">Perhitungan</span>
                 </a>
 
                 <ul class="sidebar-nav">
@@ -44,22 +44,16 @@ function formatTanggal2($date)
                     </li>
 
                     <li class="sidebar-item  <?php if ($title == 'dashboard') {
-                                                    echo 'active';
-                                                } ?>">
+                        echo 'active';} ?>">
                         <a class="sidebar-link" href="index.php">
                             <i class="align-middle" data-feather="home"></i> <span class="align-middle">Dashboard</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item <?php if ($title == 'data') {echo 'active';} ?>">
-                        <a class="sidebar-link" href="data.php">
-                            <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Data</span>
-                        </a>
-                        <a class="sidebar-link" href="total.php">
-                            <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Total Data</span>
-                        </a>
-                        <a class="sidebar-link" href="mean.php">
-                            <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Rata-Rata</span>
+                    <li class="sidebar-item <?php if ($title == 'hitung_luas') {
+                        echo 'active';} ?>">
+                        <a class="sidebar-link" href="hitung_luas.php">
+                            <i class="align-middle" data-feather="clipboard"></i> <span class="align-middle">Perhitungan Luas</span>
                         </a>
                     </li>
                     <br><br><br><br>
@@ -73,25 +67,6 @@ function formatTanggal2($date)
                 <a class="sidebar-toggle js-sidebar-toggle">
                     <i class="hamburger align-self-center"></i>
                 </a>
-
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav navbar-align">
-                        <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                                <i class="align-middle" data-feather="settings"></i>
-                            </a>
-
-                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark"><?php echo $username ?></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="index.php"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logout.php">Log out</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </nav>
             <main class="content">
                 <div class="container-fluid p-0">

@@ -2,7 +2,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$database = "data_store";
+$database = "bangun";
 
 $konek = new mysqli($hostname, $username, $password, $database);
 if ($konek->connect_error) {
